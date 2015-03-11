@@ -3,14 +3,18 @@ import sys
 
 BUFFER_SIZE = 1024
 MSG_FROM_SERVER = "Hello from server"
+host = 'localhost' 
+port = 8003
+
 
 def create_server():
+    """ 
+    Create a server that listen on port 8003 and send response 
+    to client using tcp conection
+
+    """
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    host = 'localhost' 
-    port = 8003
-
-
+    
     sock.bind((host, port))
     sock.listen(10)
 
