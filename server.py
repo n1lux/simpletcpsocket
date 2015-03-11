@@ -16,11 +16,11 @@ def create_server():
     print("Tcp server wait Conections on port 8003...")
 
     while True:
-                try:
-             (con, address) = sock.accept()
-             print(address[0]+" Conected...")
-             data = con.recv(BUFFER_SIZE)
-             print(address[0]+" say: " + data.decode('UTF-8'))
+        try:
+            (con, address) = sock.accept()
+            print(address[0]+" Conected...")
+            data = con.recv(BUFFER_SIZE)
+            print(address[0]+" say: " + data.decode('UTF-8'))
         except ValueError:
             print("Error: Accept")
 
