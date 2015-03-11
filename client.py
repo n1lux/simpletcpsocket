@@ -12,6 +12,10 @@ try:
     print("To send >>>"+ MSG)
     sock.send(MSG.encode('utf-8'))
     data = sock.recv(buffer_size)
+    if len(str(data)) > 0:
+        print("Receiv from server: "+data.decode('utf-8'))
+    else:
+        print("No data received from server...")
 except ValueError:
     print("Erro connect!")
 
